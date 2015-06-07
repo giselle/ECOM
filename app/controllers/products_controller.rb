@@ -41,4 +41,10 @@ class ProductsController < ApplicationController
     redirect_to "/products/"
   end
 
+  def sort
+    product_id = params [:id]
+    @product = Product.order(name: :desc)
+
+  end
+
 end

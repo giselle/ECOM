@@ -2,7 +2,7 @@
   <% @products.each do |product| %>
 <div class="col-md-4">
   <h2><%= link_to product.name, "/products/#{product.id}" %></h2>
-  <h3><%= product.price %></h3>
+  <h3><%= number_to_currency(product.price) %></h3>
   <h4><%= product.description %></h4>
   <%= image_tag product.image, width: 300, class: "product-image" %>
   <hr>
