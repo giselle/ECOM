@@ -2,6 +2,12 @@ class ProductsController < ApplicationController
 
   def index 
     @products = Product.all
+    if params[:sort] && params[:sort_order]
+      @products  = @products.order(params[:sort] => params[:sort_order])
+    end
+    if params[:discount]
+      @products = @products.where("price <?", 10)
+    end
   end
 
   def show
@@ -30,7 +36,6 @@ class ProductsController < ApplicationController
     product.update(name: params[:name], price: params[:price], image: params[:image], description: params[:description])
     flash[:success] = "Product Successfully Updated!"
     redirect_to "/products/#{product.id}"
-
   end
 
   def destroy
@@ -41,10 +46,9 @@ class ProductsController < ApplicationController
     redirect_to "/products/"
   end
 
-  def sort
-    product_id = params [:id]
-    @product = Product.order(name: :desc)
-
+  def search
+    search_term = params[:search]
+    @products = Product.where("name LIKE ?", "%#{search_term}%")
+    render :index
   end
-
 end
