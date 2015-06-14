@@ -48,7 +48,7 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: ecom1_production
-  username: ecom1
-  password: <%= ENV['ECOM1_DATABASE_PASSWORD'] %>
+    database: ecom1-production
+    adapter: postgresql
+    encoding: unicode
+    pool: 5

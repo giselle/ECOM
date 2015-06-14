@@ -1,12 +1,19 @@
-<div class="row">
-  <% @products.each do |product| %>
-<div class="col-md-4">
-  <h2><%= link_to product.name, "/products/#{product.id}" %></h2>
-  <h3><%= number_to_currency(product.price) %></h3>
-  <h4><%= product.description %></h4>
-  <%= image_tag product.image, width: 300, class: "product-image" %>
-  <hr>
+   <section>
+      <div class="row">
 
-  </div>
-  <% end %>
-</div>
+      <% @products.each do |product| %>
+
+        <div class="col-sm-4">
+          <div class="product_single">
+            <h2><%= product.name %></h2>
+            <p>Price: <%= product.price %></p>
+            <a href="/products/<%= product.id %>" title="View Product"><img src="<%= product.image %>" alt="<%= product.name %>" class="img-responsive product_single_image"></a>
+            <p>Description: <%= product.description %></p>
+            <p>Rating: <span class="rating"><%= product.rating %></span></p>
+          </div>
+        </div>
+      <% end %>
+      
+      </div>
+    </section>
+    <%= link_to "Add New Product", "products/new" %>

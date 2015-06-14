@@ -10,9 +10,13 @@ class ProductsController < ApplicationController
     end
   end
 
-  def show
-    product_id = params[:id]
-    @product = Product.find_by(id: product_id)
+    def show
+    if params[:id] == "random"
+      products = Product.all
+      @product= products.sample
+    else
+      @product = Product.find_by(id: params[:id])
+    end
   end
 
   def new 
@@ -51,4 +55,7 @@ class ProductsController < ApplicationController
     @products = Product.where("name LIKE ?", "%#{search_term}%")
     render :index
   end
+
+
+
 end
