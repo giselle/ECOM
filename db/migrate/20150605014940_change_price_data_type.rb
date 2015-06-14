@@ -1,5 +1,5 @@
 class ChangePriceDataType < ActiveRecord::Migration
   def change
-    change_column :products, :price, :decimal
+    #change_column :products, :price, :decimal
   end
 end
