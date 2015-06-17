@@ -1,13 +1,11 @@
   <section>
     <div class="row">    
       <div class="col-sm-9">
-        <div class="taco_single">
+        <div class="product_single">
             <h2><%= @product.name %></h2>
             <p>Price: <%= @product.price %></p>
-            <p>Brought to you by: <%= @product.supplier.name %></p>
             <img src="<%= @product.image %>" alt="<%= @product.name %>" class="img-responsive">
             <p>Description: <%= @product.description %></p>
-            <p>Rating: <span class="rating"><%= @product.rating %></span></p>
             <%= link_to "Edit", "/products/#{@product.id}/edit", class: "btn btn-success" %>
             <%= link_to "Delete", "/products/#{@product.id}", {method: :delete, class: "btn btn-danger" }%>
         </div>
@@ -16,7 +14,7 @@
   </section>
 
   <section>
-    <%= form_tag "/orders", method: :post do %>
+    <%= form_tag "/carted_products", method: :post do %>
       <div>
         <%= label_tag :quantity %>
         <%= text_field_tag :quantity %>
@@ -25,7 +23,7 @@
         <%= hidden_field_tag :product_id, @product.id %>
       </div>
       <div>
-        <%= submit_tag "Buy Now!" %>
+        <%= submit_tag "Add to Cart!" %>
       </div>
     <% end %>
   </section>

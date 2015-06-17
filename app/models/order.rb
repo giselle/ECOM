@@ -1,4 +1,8 @@
 class Order < ActiveRecord::Base
+  belongs_to :user 
+  has_many :carted_product
+  has_many :users, through: :carted_product
+  has_many :products, through: :carted_products
 
 def calculate_subtotal(price)
     quantity * price
