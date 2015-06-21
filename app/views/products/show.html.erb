@@ -3,7 +3,7 @@
       <div class="col-sm-9">
         <div class="product_single">
             <h2><%= @product.name %></h2>
-            <p>Price: <%= @product.price %></p>
+            <p>Only $<%= @product.price %></p>
             <img src="<%= @product.image %>" alt="<%= @product.name %>" class="img-responsive">
             <p>Description: <%= @product.description %></p>
             <%= link_to "Edit", "/products/#{@product.id}/edit", class: "btn btn-success" %>

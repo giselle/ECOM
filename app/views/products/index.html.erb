@@ -3,12 +3,12 @@
 
       <% @products.each do |product| %>
 
-        <div class="col-sm-4">
+        <div class="col-sm-3">
           <div class="product_single">
-            <h2><%= product.name %></h2>
-            <p>Price: <%= product.price %></p>
+           <a href="/products/<%= product.id %>" title="Click to Product"><h2><%= product.name %></h2></a>
+            <p>Only $<%= product.price %></p>
             <a href="/products/<%= product.id %>" title="View Product"><img src="<%= product.image %>" alt="<%= product.name %>" class="img-responsive product_single_image"></a>
-            <p>Description: <%= product.description %></p>
+           <!-- <p>Description: <%= product.description %></p> --> 
           </div>
         </div>
       <% end %>
@@ -16,3 +16,8 @@
       </div>
     </section>
     <%= link_to "Add New Product", "products/new" %>
+
+
+
+
+

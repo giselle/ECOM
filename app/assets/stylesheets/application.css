@@ -14,7 +14,9 @@
  *= require_self
  */
 
-
+h2 {
+    color: #333333;
+}
  .navbar-default {
   background-color: #00b8a2;
   border-color: #84c9bc;

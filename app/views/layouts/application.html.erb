@@ -9,20 +9,25 @@
 <body>
 
 
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
+<nav class="navbar navbar-default navbar-static-top">
+  <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+ <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" 
+            data-target=".navbar-ex1-collapse">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/products">Doggyloot</a>
-    </div>
+    </button>
+    <a class="navbar-brand" rel="home" href="/products" title="Doggyloot.com">
+        <img style="max-width:100px; margin-top: -38px;"
+             src="https://s3-us-west-2.amazonaws.com/giselle-misc/Giselle-ACLTC/Giselle-ECOM-Project/dloot-com_w.png">
+    </a>
+</div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
+    
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="/products?sort=price&sort_order=asc">Price Low to High<span class="sr-only">(current)</span></a></li>

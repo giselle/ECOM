@@ -9,4 +9,6 @@ class CartedProductsController < ApplicationController
     @cartedproducts = CartedProduct.where(status: "carted", user_id: current_user.id)
   end
 
+
+
 end

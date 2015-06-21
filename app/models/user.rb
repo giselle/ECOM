@@ -8,4 +8,7 @@ class User < ActiveRecord::Base
   has_many :carted_product
   has_many :products, through: :carted_product
 
+  validates_format_of :email, :with => /@/
+
+
 end
