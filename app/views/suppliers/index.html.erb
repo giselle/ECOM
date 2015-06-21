@@ -1,0 +1,17 @@
+   <section>
+      <div class="row">
+
+      <% @suppliers.each do |supplier| %>
+
+        <div class="col-sm-3">
+          <div class="supplier_single">
+           <a href="/suppliers/<%= supplier.id %>" title="Click to see Supplier"><h2><%= supplier.name %></h2></a>
+            <a href="/suppliers/<%= supplier.id %>" title="View supplier"><img src="<%= supplier.image %>" alt="<%= supplier.name %>" class="img-responsive supplier_single_image"></a>
+           <!-- <p>Description: <%= supplier.description %></p> --> 
+          </div>
+        </div>
+      <% end %>
+      
+      </div>
+    </section>
+    <%= link_to "Add New supplier", "suppliers/new" %>

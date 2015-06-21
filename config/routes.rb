@@ -30,4 +30,14 @@ Rails.application.routes.draw do
 
   get "/carted_products" => 'carted_products#index'
 
+  get "/suppliers/new" => 'suppliers#new'
+
+  post "/suppliers" => 'suppliers#create'
+
+  get "/suppliers" => 'suppliers#index'
+
+  get "/suppliers/:id" => 'suppliers#show'
+
+  get "/suppliers/:id/edit" => 'suppliers#edit'
+
 end
